@@ -36,7 +36,7 @@ Meeting agendas and minutes are available in the NBAC TSC [meeting-minutes](http
   - Surface Transportation
   - Harmonization**
   
-* The Sub-Committee list reflects former NIEM domains which are currently in the process of transition to NIEMOpen and the Harmonization Sub-Committee which manages the harmonization process supporting the NIEM model.
+\* The Sub-Committee list reflects former NIEM domains which are currently in the process of transition to NIEMOpen and the Harmonization Sub-Committee which manages the harmonization process supporting the NIEM model.
 
 ** Unlike Sub-Committees representing Communities-of-Interest which manage a specific domain space, the Harmonization Sub-Committee manages the process of harmonization to ensure no duplication in the model as updates are made and it evolves to accommodate new community business requirements. The harmonization process integrates these new requirements while still ensuring data elements exist only once in the model. There are two types of harmonization, between model domain spaces and between NIEM core and model domain spaces.
 
@@ -47,21 +47,26 @@ Meeting agendas and minutes are available in the NBAC TSC [meeting-minutes](http
   - Infrastructure Protection
   - Screening
 
-* As part of the transition process to NIEMOpen, each former NIEM domain is undergoing a review to assess its maturity, activity level, and prospect for transition. Those domains that are evaluated as inactive will have their model content preserved and placed in conservatorship of the NBAC TSC.
+\* As part of the transition process to NIEMOpen, each former NIEM domain is undergoing a review to assess its maturity, activity level, and prospect for transition. Those domains that are evaluated as inactive will have their model content preserved and placed in conservatorship of the NBAC TSC.
 
 ## Tiger Teams
+
   - Sub-Committee Management & Standing Rules Tiger Team, governance document available in documents folder.
   
 ## Active Members*
+
   - Roster maintained in documents folder.
   
-* Signed i-cla on file.
+\* Signed i-cla on file.
 
 ## Community of Interest
+
   - Roster maintained in documents folder.
   
 ## Meetings
+
   - The NBAC TSC currently meets the last Thursday of every month from 1 – 2 PM Eastern time. The meetings are scheduled on the NBAC TSC Calendar: https://lists.oasis-open-projects.org/g/niemopen-nbactsc/calendar
+  
   - Sub-Committee and Tiger Team meetings are scheduled on the NBAC TSC Calendar.
 
 # Other assets
