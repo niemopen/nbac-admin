@@ -1,12 +1,68 @@
-<img src="https://github.com/niemopen/oasis-open-project/blob/main/artwork/NIEM-NO-Logo-v5.png" width="200">
+[<img src="https://github.com/niemopen/oasis-open-project/raw/main/artwork/NIEM-NO-Logo-v5.png" alt="img" style="zoom:10%;" />](https://github.com/niemopen/oasis-open-project/blob/main/artwork/NIEM-NO-Logo-v5.png)
 
-# README
+# NIEMOpen Business Architecture Committee (NBAC)
 
-This repository is part of the NIEM Open Project.
+The NIEMOpen Business Architecture Committee (NBAC) is a Technical Steering Committee within the OASIS Open Project known as [NIEMOpen](https://github.com/niemopen/oasis-open-project). The NBAC TSC is responsible for identifying the business requirements of NIEMOpen and
 
-For more information on NIEMOpen, see the project's website at [www.niemopen.org](www.niemopen.org).
+- Coordinates, harmonizes, and unifies content as it relates to the NIEM data model and the code-list
 
-General questions about OASIS Open Projects may be directed to OASIS staff at project-admin@lists.oasis-open-projects.org
+- Safeguards NIEM data model core content
+
+- Identifies, validates and on-boards new NIEM communities of-interest focused on establishing  new model domain spaces, as well as,
+
+- Advises and supports the Project Governance Board (PGB) on matters relating to business architecture and requirements of NIEMOpen.
+
+Meeting agendas and minutes are available in the NBAC TSC [meeting-minutes](https://github.com/niemopen/nbac-admin/tree/main/meeting-minutes) folder. Some of the working notes and documents discussed at NBAC TSC meetings may be found in the [NBAC TSC Subgroup Files folder](https://lists.oasis-open-projects.org/g/niemopen-nbactsc/files).
+
+## Co-Chairs
+
+  - Kamran Atri
+  - Thomas Krul
+  
+## Sub-Committees*
+
+  - Biometrics
+  - Chemical Biological Radiological Nuclear
+  - Emergency Management
+  - Human Services
+  - Immigration
+  - Intelligence
+  - International Human services
+  - International Trade
+  - Justice
+  - Learning & Development
+  - Maritime
+  - MilOps
+  - Surface Transportation
+  - Harmonization**
+  
+* The Sub-Committee list reflects former NIEM domains which are currently in the process of transition to NIEMOpen and the Harmonization Sub-Committee which manages the harmonization process supporting the NIEM model.
+
+** Unlike Sub-Committees representing Communities-of-Interest which manage a specific domain space, the Harmonization Sub-Committee manages the process of harmonization to ensure no duplication in the model as updates are made and it evolves to accommodate new community business requirements. The harmonization process integrates these new requirements while still ensuring data elements exist only once in the model. There are two types of harmonization, between model domain spaces and between NIEM core and model domain spaces.
+
+## Inactive Sub-Committees*
+
+  - Agriculture Cyber
+  - Cyber
+  - Infrastructure Protection
+  - Screening
+
+* As part of the transition process to NIEMOpen, each former NIEM domain is undergoing a review to assess its maturity, activity level, and prospect for transition. Those domains that are evaluated as inactive will have their model content preserved and placed in conservatorship of the NBAC TSC.
+
+## Tiger Teams
+  - Sub-Committee Management & Standing Rules Tiger Team, governance document available in documents folder.
+  
+## Active Members*
+  - Roster maintained in documents folder.
+  
+* Signed i-cla on file.
+
+## Community of Interest
+  - Roster maintained in documents folder.
+  
+## Meetings
+  - The NBAC TSC currently meets the last Thursday of every month from 1 – 2 PM Eastern time. The meetings are scheduled on the NBAC TSC Calendar: https://lists.oasis-open-projects.org/g/niemopen-nbactsc/calendar
+  - Sub-Committee and Tiger Team meetings are scheduled on the NBAC TSC Calendar.
 
 # Other assets
 
