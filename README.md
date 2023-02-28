@@ -51,17 +51,17 @@ Meeting agendas and minutes are available in the NBAC TSC [meeting-minutes](http
 
 ## Tiger Teams
 
-  - Sub-Committee Management & Standing Rules Tiger Team, governance document available in documents folder.
+  - Sub-Committee Management & Standing Rules Tiger Team, governance document available in [documents folder](/documents).
   
 ## Active Members*
 
-  - Roster maintained in documents folder.
+  - Roster maintained in [documents folder](/documents).
   
 \* Signed i-cla on file.
 
 ## Community of Interest
 
-  - Roster maintained in documents folder.
+  - Roster maintained in [documents folder](/documents).
   
 ## Meetings
 
