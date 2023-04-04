@@ -55,13 +55,13 @@ Meeting agendas and minutes are available in the NBAC TSC [meeting-minutes](http
   
 ## Active Members*
 
-  - Roster maintained in [documents folder](/documents).
+  - Roster maintained in [roster folder](/roster).
   
 \* Signed i-cla on file.
 
 ## Community of Interest
 
-  - Roster maintained in [documents folder](/documents).
+  - Roster maintained in [roster folder](/roster).
   
 ## Meetings
 
