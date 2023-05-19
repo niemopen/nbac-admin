@@ -1,29 +1,30 @@
 Represents,Involvement,Name,Organization,HSC Status,CLA,Notes
-Agriculture,data steward,NBAC,,none
-Biometrics,data steward,Vamsikrishna Kondannagari,Integral Fed,member,yes
-Biometrics,stakeholder,Ashok Singal,,member
-Biometrics,stakeholder,Jennifer Stathakis,FBI,member,yes
-Biometrics,stakeholder,Satish Sripada,Office of Biometric Identity Management (OBIM),member,yes
-Cyber,data steward,NBAC,,none
-Cyber,stakeholder,Duncan Sparrell,sFractal,member,yes
-CBRN,data steward,NBAC,,none
+Agriculture,data steward,NBAC,,none,,
+Biometrics,data steward,Vamsikrishna Kondannagari,Integral Fed,member,yes,
+Biometrics,stakeholder,Ashok Singal,,member,,
+Biometrics,stakeholder,Jennifer Stathakis,FBI,member,yes,
+Biometrics,stakeholder,Satish Sripada,Office of Biometric Identity Management (OBIM),member,yes,
+Cyber,data steward,NBAC,,none,,
+Cyber,stakeholder,Duncan Sparrell,sFractal,member,yes,
+CBRN,data steward,NBAC,,none,,
 Emergency Management,data steward,Kamran Atri,A4SAFE,co-chair,yes,NBAC co-chair
-Human Services,data steward,NBAC,,none
-Immigration,data steward,Curtis Ross,,none
-Immigration,data steward,Jennifer Kish,,none
-Infrastructure Protection,data steward,NBAC,,none
-Intelligence,data steward,NBAC,,none
-International Human Services,data steward,Cynthia Sun,Human Resources Development Canada,member
-International Trade,data steward,NBAC,,none
-Justice,data steward,April Mitchell,FBI,member,,Representantive for the Justice domain governance body (XSTF)
-Learning and Development,data steward,Andy Johnson,,none
-Maritime,data steward,NBAC,,none
-Military Operations,data steward,Charles Chipman,Georgia Tech Research Institute (GTRI),follow up,yes
-Screening,data steward,NBAC,,none
-Surface Transportation,data steward,Luke Johnson,,none
-"FBI codes (NCIC, NDEx, UCR)",data steward,April Mitchell,FBI,member
+Human Services,data steward,NBAC,,none,
+Immigration,data steward,Curtis Ross,,none,
+Immigration,data steward,Jennifer Kish,,none,
+Infrastructure Protection,data steward,NBAC,,none,
+Intelligence,data steward,NBAC,,none,
+International Human Services,data steward,Cynthia Sun,Human Resources Development Canada,member,,
+International Trade,data steward,NBAC,,none,
+Justice,data steward,TBD,,,,
+Justice,stakeholder,April Mitchell,FBI,member,,
+Learning and Development,data steward,Andy Johnson,,none,
+Maritime,data steward,NBAC,,none,
+Military Operations,data steward,Charles Chipman,Georgia Tech Research Institute (GTRI),follow up,yes,
+Screening,data steward,NBAC,,none,
+Surface Transportation,data steward,Luke Johnson,,none,
+"FBI codes (NCIC, NDEx, UCR)",data steward,April Mitchell,FBI,member,yes,
 NBAC,,Thomas Krul,National Defence and the Canadian Armed Forces,support,yes,NBAC co-chair
-NIEM staff,,Christina Medlin,Georgia Tech Research Institute (GTRI),co-chair
-NIEM staff,,Stephen Sullivan,Booz Allen Hamilton (BAH),support,yes
-OASIS staff,,Chet Ensign,OASIS,support
-OASIS staff,,Kelly Cullinane,OASIS,support
+NIEM staff,,Christina Medlin,Georgia Tech Research Institute (GTRI),co-chair,yes,
+NIEM staff,,Stephen Sullivan,Booz Allen Hamilton (BAH),support,yes,
+OASIS staff,,Chet Ensign,OASIS,support,,
+OASIS staff,,Kelly Cullinane,OASIS,support,,

@@ -16,6 +16,7 @@ The [HSC Calendar](https://lists.oasis-open-projects.org/g/niemopen-harmonizatio
 Item | Description
 --- | ---
 [HSC mailing list](mailto:niemopen-harmonizationsc@lists.oasis-open-projects.org) | Mailing list for the Harmonization subcommittee
+[HSC roster](https://github.com/niemopen/nbac-admin/blob/main/harmonization-subcommittee/roster.csv) | Membership list for the Harmonization Subcommittee
 [HSC OASIS group site](https://lists.oasis-open-projects.org/g/niemopen-harmonizationsc) | Site to join the Harmonization Subcommittee, subscribe to the email list and calendar, etc.
 [Model repo](https://github.com/niemopen/niem-model) | Packages for each version of NIEM, including XML Schemas and documentation spreadsheets
 [NBAC issue tracker](https://github.com/niemopen/niem-model/issues) | Search or submit content-related issues
