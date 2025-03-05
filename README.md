@@ -42,7 +42,7 @@ Meeting agendas and minutes are available in the NBAC TSC [meeting-minutes](http
 
 ## Inactive Sub-Committees*
 
-  - Agriculture Cyber
+  - Agriculture
   - Cyber
   - Infrastructure Protection
   - Screening
