@@ -1,0 +1,830 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NIEM API 2.0",
+    "description": "Community support for common NIEM tool functionality to browse and search the model, build and migrate subsets, and check conformance",
+    "contact": {
+      "name": "NIEMOpen",
+      "url": "https://niemopen.org"
+    },
+    "version": "2.0-alpha2-SNAPSHOT"
+  },
+  "servers": [{
+    "url": "https://tools.niem.gov/api/v2",
+    "description": "Production server"
+  }, {
+    "url": "http://localhost:8080/api/v2",
+    "description": "Local machine"
+  }, {
+    "url": "https://yellowkiwi06.icl.gtri.org/",
+    "description": "Internal test server"
+  }],
+  "tags": [{
+    "name": "App",
+    "description": "General application calls"
+  }, {
+    "name": "Transforms",
+    "description": "Transformations"
+  }],
+  "paths": {
+    "/transforms/models": {
+      "post": {
+        "tags": ["Transforms"],
+        "summary": "Transform a model from one supported NIEM format to another",
+        "operationId": "transformModel",
+        "parameters": [{
+          "name": "from",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "enum": ["cmf", "xsd", "csv"]
+          }
+        }, {
+          "name": "to",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "enum": ["cmf", "owl", "xsd", "json_schema", "csv"]
+          }
+        }, {
+          "name": "file",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "binary"
+          }
+        }],
+        "responses": {
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {},
+              "application/xml": {},
+              "application/zip": {},
+              "text/turtle": {}
+            }
+          }
+        }
+      }
+    },
+    "/version": {
+      "get": {
+        "tags": ["App"],
+        "summary": "Gets the current version of the NIEM API application.",
+        "description": "Gets the current version of the NIEM API application.",
+        "operationId": "version",
+        "responses": {
+          "200": {
+            "description": "Version",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stewards/{stewardKey}/models/{modelKey}/versions/{versionKey}/properties": {
+      "get": {
+        "tags": ["Properties"],
+        "summary": "Get all properties matching the given parameters",
+        "operationId": "getAllProperties",
+        "parameters": [{
+          "name": "stewardKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "modelKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "releaseNumber",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Property"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stewards/{stewardKey}/models/{modelKey}/versions/{versionKey}/properties/{qname}": {
+      "get": {
+        "tags": ["Properties"],
+        "summary": "Get the property with the given qualified name",
+        "operationId": "getProperty",
+        "parameters": [{
+          "name": "stewardKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "modelKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "releaseNumber",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "qname",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Property"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stewards/{stewardKey}/models/{modelKey}/versions/{versionKey}/datatypes": {
+      "get": {
+        "tags": ["Types"],
+        "summary": "Get all types matching the given parameters that carry a value",
+        "operationId": "getAllDataTypes",
+        "parameters": [{
+          "name": "stewardKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "modelKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "versionKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Datatype"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stewards/{stewardKey}/models/{modelKey}/versions/{versionKey}/datatypes/{qname}": {
+      "get": {
+        "tags": ["Types"],
+        "summary": "Get the datatype with the given qualified name",
+        "operationId": "getDataType",
+        "parameters": [{
+          "name": "stewardKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "modelKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "releaseNumber",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "qname",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Datatype"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stewards/{stewardKey}/models/{modelKey}/versions/{versionKey}/classes": {
+      "get": {
+        "tags": ["Types"],
+        "summary": "Get all types matching the given parameters that contain properties",
+        "operationId": "getAllClassTypes",
+        "parameters": [{
+          "name": "stewardKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "modelKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "versionKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClassType"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stewards/{stewardKey}/models/{modelKey}/versions/{versionKey}/classes/{qname}": {
+      "get": {
+        "tags": ["Types"],
+        "summary": "Get the class with the given qualified name",
+        "operationId": "getClassType",
+        "parameters": [{
+          "name": "stewardKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "modelKey",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "releaseNumber",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "name": "qname",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClassType"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ClassType": {
+        "type": "object",
+        "properties": {
+          "sequenceID": {
+            "type": "string"
+          },
+          "model": {
+            "$ref": "#/components/schemas/Model"
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "$ref": "#/components/schemas/Namespace"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "isAbstract": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "isDeprecated": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "isAugmentable": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "isExternal": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "canHaveMD": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "extensionOfClass": {
+            "$ref": "#/components/schemas/ClassType"
+          },
+          "augmentable": {
+            "type": "boolean"
+          },
+          "external": {
+            "type": "boolean"
+          },
+          "abstract": {
+            "type": "boolean"
+          },
+          "deprecated": {
+            "type": "boolean"
+          },
+          "namespaceURI": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "modelChild": {
+            "type": "boolean"
+          },
+          "qname": {
+            "type": "string"
+          }
+        },
+        "description": ""
+      },
+      "Component": {
+        "type": "object",
+        "properties": {
+          "sequenceID": {
+            "type": "string"
+          },
+          "model": {
+            "$ref": "#/components/schemas/Model"
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "$ref": "#/components/schemas/Namespace"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "isAbstract": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "isDeprecated": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "abstract": {
+            "type": "boolean"
+          },
+          "deprecated": {
+            "type": "boolean"
+          },
+          "namespaceURI": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "modelChild": {
+            "type": "boolean"
+          },
+          "qname": {
+            "type": "string"
+          }
+        }
+      },
+      "Datatype": {
+        "type": "object",
+        "properties": {
+          "sequenceID": {
+            "type": "string"
+          },
+          "model": {
+            "$ref": "#/components/schemas/Model"
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "$ref": "#/components/schemas/Namespace"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "isAbstract": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "isDeprecated": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "restrictionOf": {
+            "$ref": "#/components/schemas/RestrictionOf"
+          },
+          "unionOf": {
+            "$ref": "#/components/schemas/UnionOf"
+          },
+          "listOf": {
+            "$ref": "#/components/schemas/Datatype"
+          },
+          "abstract": {
+            "type": "boolean"
+          },
+          "deprecated": {
+            "type": "boolean"
+          },
+          "namespaceURI": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "modelChild": {
+            "type": "boolean"
+          },
+          "qname": {
+            "type": "string"
+          }
+        },
+        "description": ""
+      },
+      "Facet": {
+        "type": "object",
+        "properties": {
+          "sequenceID": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "facetKind": {
+            "type": "string"
+          },
+          "stringVal": {
+            "type": "string"
+          },
+          "xsdfacet": {
+            "type": "string"
+          },
+          "modelChild": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Model": {
+        "type": "object",
+        "properties": {
+          "sequenceID": {
+            "type": "string"
+          },
+          "componentList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Component"
+            }
+          },
+          "namespaceList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Namespace"
+            }
+          },
+          "modelChild": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Namespace": {
+        "type": "object",
+        "properties": {
+          "sequenceID": {
+            "type": "string"
+          },
+          "model": {
+            "$ref": "#/components/schemas/Model"
+          },
+          "namespaceURI": {
+            "type": "string"
+          },
+          "namespacePrefix": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "modelChild": {
+            "type": "boolean"
+          },
+          "external": {
+            "type": "boolean"
+          },
+          "kind": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "kindInCMF": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Property": {
+        "type": "object",
+        "properties": {
+          "sequenceID": {
+            "type": "string"
+          },
+          "model": {
+            "$ref": "#/components/schemas/Model"
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "$ref": "#/components/schemas/Namespace"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "isAbstract": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "isDeprecated": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "subPropertyOf": {
+            "$ref": "#/components/schemas/Property"
+          },
+          "classType": {
+            "$ref": "#/components/schemas/ClassType"
+          },
+          "datatype": {
+            "$ref": "#/components/schemas/Datatype"
+          },
+          "isAttribute": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "isReferenceable": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "canHaveMD": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "attribute": {
+            "type": "boolean"
+          },
+          "referenceable": {
+            "type": "boolean"
+          },
+          "abstract": {
+            "type": "boolean"
+          },
+          "deprecated": {
+            "type": "boolean"
+          },
+          "namespaceURI": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "modelChild": {
+            "type": "boolean"
+          },
+          "qname": {
+            "type": "string"
+          }
+        },
+        "description": ""
+      },
+      "RestrictionOf": {
+        "type": "object",
+        "properties": {
+          "sequenceID": {
+            "type": "string"
+          },
+          "datatype": {
+            "$ref": "#/components/schemas/Datatype"
+          },
+          "facetList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Facet"
+            }
+          },
+          "modelChild": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UnionOf": {
+        "type": "object",
+        "properties": {
+          "sequenceID": {
+            "type": "string"
+          },
+          "datatypeList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Datatype"
+            }
+          },
+          "modelChild": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}
